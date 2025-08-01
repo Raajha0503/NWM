@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'Static HTML application - no build required'",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {},
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+} 
