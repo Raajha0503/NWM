@@ -1,0 +1,54 @@
+{
+  "name": "barclays-network-management-portal",
+  "version": "1.0.0",
+  "description": "Barclays Network Management Operations Portal - A comprehensive web application for managing network operations, account creation, workflow processing, and data reconciliation.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "dev": "live-server --port=3000 --open=/index.html --watch=.",
+    "build": "echo 'No build process required for static HTML application'",
+    "test": "echo 'No tests specified'",
+    "lint": "eslint . --ext .js,.html",
+    "format": "prettier --write .",
+    "serve": "python3 -m http.server 8000",
+    "serve-python2": "python -m SimpleHTTPServer 8000",
+    "serve-node": "npx http-server -p 8000 -o"
+  },
+  "keywords": [
+    "barclays",
+    "network-management",
+    "workflow",
+    "account-management",
+    "reconciliation",
+    "firebase",
+    "tailwindcss",
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": "Barclays Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "firebase": "^10.11.0",
+    "chart.js": "^4.4.1",
+    "papaparse": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barclays/network-management-portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/barclays/network-management-portal/issues"
+  },
+  "homepage": "https://github.com/barclays/network-management-portal#readme"
+} 

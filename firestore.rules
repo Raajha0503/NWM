@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow authenticated users to read their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow authenticated users to read/write accounts
+    match /accounts/{accountId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read/write requests
+    match /requests/{requestId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read/write workflow data
+    match /workflow/{workflowId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read/write reconciliation data
+    match /reconciliation/{recordId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read/write audit logs
+    match /audit_logs/{logId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read/write counters
+    match /counters/{counterId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 
